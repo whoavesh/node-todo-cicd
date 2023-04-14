@@ -2,28 +2,24 @@
 
 <html>
 
-    <head>
-        <title>AVESH TODO LIST WEB APP</title>
-        <style>
-            a {
-                text-decoration: none;
-                color: black;
-            }
 <head>
     <title>My shaandaar todolist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
-
-        a, li{
+        a,
+        li {
             list-style: none;
             text-decoration: none;
             color: white;
 
 
-    <body>
-        <h1>soley</h1>
         }
 
         body {
@@ -35,7 +31,8 @@
 
         }
 
-        h1,ul {
+        h1,
+        ul {
             text-align: center;
         }
 
@@ -52,7 +49,8 @@
             outline: none;
             margin: 9px;
         }
-        .inputelem input{
+
+        .inputelem input {
             margin-right: 9px;
         }
 
@@ -74,11 +72,12 @@
             border-radius: 5px;
             transition: all ease 0.1s;
             box-shadow: 0px 5px 0px 0px #a29bfe;
-        }    
+        }
+
         button:active {
-  transform: translateY(5px);
-  box-shadow: 0px 0px 0px 0px #a29bfe;
-}       
+            transform: translateY(5px);
+            box-shadow: 0px 0px 0px 0px #a29bfe;
+        }
 
 
         /* input */
@@ -95,23 +94,23 @@
 </head>
 
 <body>
-    
+
     <div class="animate__animated animate__fadeInUp">
         <h1>Docker & CNCF Meetup is Awesome</h1>
         <ul>
             <% todolist.forEach(function(todo, index) { %>
-            <li>
-                <a href="/todo/delete/<%= index %>">✘</a>
-                <a href="/todo/<%= index %>">✎</a>
-                <%- todo %>
-            </li>
-            <% }); %>
+                <li>
+                    <a href="/todo/delete/<%= index %>">✘</a>
+                    <a href="/todo/<%= index %>">✎</a>
+                    <%- todo %>
+                </li>
+                <% }); %>
         </ul>
 
         <form action="/todo/add/" method="post">
             <p>
                 <label for="newtodo">What shoud I do?</label>
-                <div class="inputelem">
+            <div class="inputelem">
                 <input type="text" placeholder="Type here" name="newtodo" id="newtodo" autofocus />
                 <button type="submit" value="Add">
                     Add
