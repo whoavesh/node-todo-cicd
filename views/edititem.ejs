@@ -2,27 +2,94 @@
 
 <html>
 
-    <head>
-        <title>Edit <%- todo %></title>
-        <style>
-            a {
-                text-decoration: none;
-                color: black;
-            }
+<head>
+    <title>Edit <%- todo %></title>
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
 
-        </style>
-    </head>
+        body {
+            text-decoration: none;
+            background-color: #03001C;
+            color: #6c5ce7;
+            font-family: 'Ubuntu Mono', monospace;
+            font-size: 1vw;
 
-    <body>
-        <h1>Edit <%- todo %>:</h1>
-        <form action="/todo/edit/<%= todoIdx %>" method="post">
-            <p>
-                <label for="editTodo">Change to:</label>
-                <input type="hidden" name="_method" value="PUT">
-                <input type="text" name="editTodo" id="editTodo" autofocus placeholder="<%- todo %>" />
-                <input type="submit" value="Save" />
-            </p>
-        </form>
-    </body>
+        }
+
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            background-color: #6c5ce7;
+            padding: 10px 20px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            border-radius: 5px;
+            transition: all ease 0.1s;
+            box-shadow: 0px 5px 0px 0px #a29bfe;
+        }
+
+        button:active {
+            transform: translateY(5px);
+            box-shadow: 0px 0px 0px 0px #a29bfe;
+        }
+        input {
+            width: 210px;
+            height: 40px;
+            padding: 0 16px;
+            background: transparent;
+            border-radius: 4px;
+            border: 1px solid #a29bfe;
+            color: #f9f9f9;
+        }
+        .inputelem {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            outline: none;
+            margin: 9px;
+        }
+        .inputelem input{
+            margin-right: 9px;
+        }
+
+        .inputelem input[type=text]:focus {
+
+            outline: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Edit <%- todo %>:</h1>
+    <form action="/todo/edit/<%= todoIdx %>" method="post">
+        <p>
+            <label for="editTodo">Change to:</label>
+        <div class="inputelem">
+
+            <input type="hidden" name="_method" value="PUT">
+            <input type="text" name="editTodo" class="inputtxt" id="editTodo" autofocus placeholder="<%- todo %>" />
+            <button type="submit" value="Save">
+                Save
+            </button>
+        </div>
+        </p>
+    </form>
+</body>
 
 </html>
