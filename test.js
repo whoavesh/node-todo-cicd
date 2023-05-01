@@ -1,5 +1,5 @@
 // Requiring module
-const ssert = require('assert');
+const assert = require('assert');
 
 // We can group similar tests inside a describe block
 describe("Simple Calculations", () => {
