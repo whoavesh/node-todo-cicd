@@ -1,4 +1,4 @@
-FROM node:12.2.0-alpine
+FROM ubuntu/apache2
 WORKDIR app
 COPY . .
 RUN npm install
